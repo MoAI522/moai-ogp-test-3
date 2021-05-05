@@ -2,6 +2,8 @@ import Head from "next/head";
 import React from "react";
 import { GetServerSideProps, NextPage } from "next";
 
+const baseURL = "https://moai-ogp-test-3.herokuapp.com";
+
 interface IUserPageSSProps {
   URL: string;
   userName: string;
@@ -18,14 +20,14 @@ const UserPage: NextPage<IUserPageSSProps> = ({
     <div>
       <Head>
         <title>OGP TEST-USER PAGE</title>
-        <meta property="og:url" content={URL} />
+        <meta property="og:url" content={baseURL + URL} />
         <meta property="og:title" content={`user_name:${userName}`} />
         <meta property="og:description" content={userDescription} />
         <meta property="og:site_name" content="OGP TEST" />
-        <meta property="og:image" content={imageSrc} />
+        <meta property="og:image" content={baseURL + imageSrc} />
       </Head>
       <p>user_name: {userName}</p>
-      <p>URL: {URL}</p>
+      <p>URL: {baseURL + URL}</p>
       <p>userDescription: {userDescription}</p>
       <img src={imageSrc} />
     </div>
