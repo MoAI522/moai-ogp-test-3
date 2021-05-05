@@ -20,6 +20,8 @@ const UserPage: NextPage<IUserPageSSProps> = ({
     <div>
       <Head>
         <title>OGP TEST-USER PAGE</title>
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@DevMoai" />
         <meta property="og:url" content={baseURL + URL} />
         <meta property="og:title" content={`user_name:${userName}`} />
         <meta property="og:description" content={userDescription} />
